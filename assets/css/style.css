@@ -1,0 +1,31 @@
+html, body{
+	font-family: 'Archivo Black', sans-serif !important;
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+}
+
+h1{
+	float: right;
+	color:#ebebeb !important;
+}
+
+h2{
+	color: #ebebeb !important;
+}
+
+.thumbnail img{
+	height: 115px;
+	min-height: 115px;
+	width: 185px;
+}
+
+
+.border{
+	border-bottom: 2px solid #ebebeb !important;
+}
+
