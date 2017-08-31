@@ -1,3 +1,4 @@
+
 function attack(){
 
 	$(".myEnemy").empty();
@@ -8,9 +9,13 @@ function attack(){
 
 	if(counter == 3){
 		$("button").attr("style", "display:none");
-		alert("We Have Our Savier??");
+		$(".myAvatar").empty();
+		$(".text").empty();
+		myImgAvatar.attr("style", "width: inherit")
+		myImgAvatar.removeClass("thumbnail");
+		$(".myHero").html(myImgAvatar);
+		$(".myPower").text("Here IS Our Hero!!")
 	}
-	console.log("Attack Porra");
 }
 
 
@@ -18,7 +23,8 @@ function attack(){
 var pickAvatar = this.pickAvatar; 
 var pickEnemy = this.pickEnemy; 
 var counter = this.counter;
-
+var myImgAvatar = this.myImgAvatar;
+var myImgEnemy = this.myImgEnemy;
 pickAvatar = false;
 pickEnemy = false;
 counter = 0;
@@ -36,13 +42,13 @@ $(".avatars").on("click", function(){
 
 if(pickAvatar == false && pickEnemy == false){
 	pickAvatar = true;
-	var myImgAvatar = imgClicked;
+	myImgAvatar = imgClicked;
 	$(".myAvatar").html(myImgAvatar);	
 }
 else if(pickAvatar  == true && pickEnemy == false){
 		pickEnemy = true;
 		counter++;
-		var myImgEnemy = imgClicked;
+		myImgEnemy = imgClicked;
 		$(".myEnemy").html(myImgEnemy);
 
 		$("button").text("Attack");
