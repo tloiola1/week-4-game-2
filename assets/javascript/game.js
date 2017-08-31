@@ -21,7 +21,7 @@ function attack(){
 		myImgAvatar.attr("style", "width: inherit")
 		myImgAvatar.removeClass("thumbnail","col-sm-3", "col-xs-3");
 		$(".myHero").html(myImgAvatar);
-		$(".myPower").text("Here IS Our Hero!!")
+		$(".myPower").text("Here Is Our Hero!!")
 		$("myHero").on("click", function(){
 			location.reload(true);
 		});
