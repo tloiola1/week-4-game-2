@@ -7,6 +7,7 @@ html, body{
     -o-background-size: cover;
     background-size: cover;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .relative{
@@ -34,13 +35,11 @@ h2{
 
 button{
 	font-size: 16px !important;
-	display: none !important;
 }
 
 .hero{
 	position: absolute;
 	left:30%;
-	top: 30px;
 }
 
 .hero img{

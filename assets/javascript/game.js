@@ -1,4 +1,10 @@
 
+
+$(".text").attr("style", "display: none");
+$(".hero").attr("style", "display: none");
+$("button").attr("style", "display: none");
+
+
 function attack(){
 
 	$(".myEnemy").empty();
@@ -8,13 +14,17 @@ function attack(){
 
 
 	if(counter == 3){
+		$(".hero").attr("style", "display: initial");
 		$("button").attr("style", "display:none");
 		$(".myAvatar").empty();
-		$(".text").empty();
+		$(".text").attr("style", "display: none");
 		myImgAvatar.attr("style", "width: inherit")
-		myImgAvatar.removeClass("thumbnail");
+		myImgAvatar.removeClass("thumbnail","col-sm-3", "col-xs-3");
 		$(".myHero").html(myImgAvatar);
 		$(".myPower").text("Here IS Our Hero!!")
+		$("myHero").on("click", function(){
+			location.reload(true);
+		});
 	}
 }
 
@@ -32,10 +42,12 @@ counter = 0;
 
 
 $(".avatars").on("click", function(){
+	$(".initialText").attr("style", "display: none !important");
+	$(".text").attr("style", "display: initial");
 	var imgClicked = $("<img>");
 	var a = $(".avatars").attr("id");
 	imgClicked = $(this);
-	a = $(this.id);
+	// a = $(this.id);
 	imgClicked.addClass("avatars");
 	imgClicked.attr("src","imgClicked");
 	$("button").attr("style", "display: initial !important; margin-left: 20px; margin-right: 20px");
