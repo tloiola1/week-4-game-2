@@ -3,23 +3,39 @@ $(".text").hide();
 $(".hero").hide();
 $("button").hide();
 
+function h(){
+	$(".hero").show();
+}
+
+function hide(){
+	$(".myAvatar").hide();
+}
 // THIS FUNCTION WILL HIDE THE ENEMY THAT HAS BEEN DESTROYED AND SET A VAR TO FALSE SO ANOTHER ENEMY CAN BE PICKED
 function destroyEnemy(){	
 	$("button").text("Pick another enemy");
 	pickEnemy = false;
 	
 	// THIS CONDITION HIDES ELEMENTS IN THE SCREEN AND SHOW THE JEDY/AVATAR IMG BIGGER
-	if(counter == 3){		
-		
-		$(".myAvatar").hide();
-		$(".hero").show();
+	if(counter == 3){
+		myImgAvatar.attr("style", "pointer-events:none");
 		$(".myHero").html(myImgAvatar);
 		$("button").hide();
 		$(".text").hide();
 		$(".myPower").attr("style", "border: 0 ");;
-		myImgAvatar.attr("style", "width: inherit")
+		myImgAvatar.attr("style", "width: inherit");
 		myImgAvatar.removeClass("thumbnail","col-sm-3", "col-xs-3");
 		$(".myPower").text("Here Is Our Jedy!!");
+		
+		setInterval(h,2000);
+		setInterval(hide,2000);
+
+		pickEnemy = true;
+		pickAvatar = true;
+
+		
+		
+		
+		
 	}
 }
 
