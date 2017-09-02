@@ -3,52 +3,49 @@ $(".text").hide();
 $(".hero").hide();
 $("button").hide();
 
-function h(){
+function bigHero(){
 	$(".hero").show();
+	$("button").show();
+	$("button").text("Click To Play");
+	$("button").on("click", function(){
+		location.reload();
+	})
 }
 
-function hide(){
-	$(".myAvatar").hide();
-}
 // THIS FUNCTION WILL HIDE THE ENEMY THAT HAS BEEN DESTROYED AND SET A VAR TO FALSE SO ANOTHER ENEMY CAN BE PICKED
 function destroyEnemy(){	
-	$("button").text("Pick another enemy");
+	$("button").text("Pick An Enemy");
 	pickEnemy = false;
 	
 	// THIS CONDITION HIDES ELEMENTS IN THE SCREEN AND SHOW THE JEDY/AVATAR IMG BIGGER
 	if(counter == 3){
-		myImgAvatar.attr("style", "pointer-events:none");
 		$(".myHero").html(myImgAvatar);
 		$("button").hide();
 		$(".text").hide();
-		$(".myPower").attr("style", "border: 0 ");;
+		$(".myPower").attr("style", "border: 0 ");
 		myImgAvatar.attr("style", "width: inherit");
 		myImgAvatar.removeClass("thumbnail","col-sm-3", "col-xs-3");
-		$(".myPower").text("Here Is Our Jedy!!");
-		
-		setInterval(h,2000);
-		setInterval(hide,2000);
-
-		pickEnemy = true;
-		pickAvatar = true;
-
-		
-		
-		
+		$(".myPower").text("You Are Our Jedy!!");
+		$(".myHero").attr("style", "pointer-events:none");
+		wins++;
+		$(".myScores").text(wins);
+		setInterval(bigHero,1000);
 		
 	}
 }
 
-
+var wins = this.wins;
+wins = 0;
+var losses = this.losses;
+losses = 0;
 var pickAvatar = this.pickAvatar; 
+pickAvatar = false;
 var pickEnemy = this.pickEnemy; 
+pickEnemy = false;
 var counter = this.counter;
+counter = 0;
 var myImgAvatar = this.myImgAvatar;
 var myImgEnemy = this.myImgEnemy;
-var interval;
-pickAvatar = false;
-pickEnemy = false;
-counter = 0;
 
 // THIS STARTS THE GAME
 $(".avatars").on("click", function(){
@@ -68,7 +65,7 @@ $(".avatars").on("click", function(){
 		myImgAvatar = imgClicked;
 		myImgAvatar.attr("style", "pointer-events:none");
 		$(".myAvatar").html(myImgAvatar);
-		$(".myAvatar .myPower").attr("style", "border: 5px solid green");
+		$(".myAvatar .myPower").attr("style", "border: 10px solid green");
 	}
 
 	// THIS CONDITION TESTS FOR IF AVATAR HAS BEEN PICKED THEN IT WILL PICK THE ENEMY AND MOVE TO THE BOTTON FOR DEFENDOR SECTION
@@ -76,7 +73,7 @@ $(".avatars").on("click", function(){
 		pickEnemy = true;
 		myImgEnemy = imgClicked;
 		$(".myEnemy").html(myImgEnemy);
-		$(".myEnemy .myPower").attr("style", "border: 5px solid green");
+		$(".myEnemy .myPower").attr("style", "border: 10px solid green");
 		$(".myEnemy").show();
 		counter++;
 		$("button").text("Attack");
@@ -92,61 +89,61 @@ $(".avatars").on("click", function(){
 			// 	COUNTER KEEPS TRACK OF HOW MANY ENEMIES AVATAR IS FIGHTING AGAINST
 			if(attackNumber == 1){
 				if(counter == 1){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid green; width: 95%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid green; width: 95%");
 				}
 
 				else if(counter == 2){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid orange; width: 75%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid orange; width: 75%");
 				}
 
 				else if(counter == 3){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid orange; width: 45%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid orange; width: 45%");
 				}
 
-				$(".myEnemy .myPower").attr("style", "border: 5px solid green; width: 90%");
+				$(".myEnemy .myPower").attr("style", "border: 10px solid green; width: 90%");
 			}
 			else if(attackNumber == 2){
 				if(counter == 1){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid green; width: 90%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid green; width: 90%");
 				}
 				else if(counter == 2){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid orange; width: 70%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid orange; width: 70%");
 				}
 				else if(counter == 3){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid red; width: 30%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid red; width: 30%");
 				}
 
-				$(".myEnemy .myPower").attr("style", "border: 5px solid orange; width: 70%");
+				$(".myEnemy .myPower").attr("style", "border: 10px solid orange; width: 70%");
 			}
 			else if(attackNumber == 3){
 				if(counter == 1){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid green; width: 85%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid green; width: 85%");
 				}
 
 				else if(counter == 2){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid orange; width: 60%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid orange; width: 60%");
 				}
 
 				else if(counter == 3){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid red; width: 25%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid red; width: 25%");
 				}
 
-				$(".myEnemy .myPower").attr("style", "border: 5px solid orange; width: 40%");
+				$(".myEnemy .myPower").attr("style", "border: 10px solid orange; width: 40%");
 			}
 			else if(attackNumber == 4){
 				if(counter == 1){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid green; width: 80%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid green; width: 80%");
 				}
 
 				else if(counter == 2){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid orange; width: 50%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid orange; width: 50%");
 				}
 
 				else if(counter == 3){
-					$(".myAvatar .myPower").attr("style", "border: 5px solid red; width: 10%");
+					$(".myAvatar .myPower").attr("style", "border: 10px solid red; width: 15%");
 				}
 
-				$(".myEnemy .myPower").attr("style", "border: 5px solid red; width: 10%");
+				$(".myEnemy .myPower").attr("style", "border: 10px solid red; width: 5%");
 			}
 
 			// CALLING FUNCTION DESTROY TO DESTROY THE ENEMY
@@ -156,4 +153,13 @@ $(".avatars").on("click", function(){
 			}
 		});
 	}
+
+
+    sessionStorage.setItem(wins,losses);
+ console.log(wins);
+    // Retrieve data
+    localStorage.getItem(wins);
+ console.log(wins);
+
+	
 });
