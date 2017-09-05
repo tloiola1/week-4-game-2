@@ -25,7 +25,7 @@ function destroyEnemy(){
 		$(".myPower").attr("style", "border: 0 ");
 		myImgAvatar.attr("style", "width: inherit");
 		myImgAvatar.removeClass("thumbnail","col-sm-3", "col-xs-3");
-		$(".myPower").text("You Are Our Jedy!!");
+		$(".myPower").text("You Are Our Jedi!!");
 		$(".myHero").attr("style", "pointer-events:none");
 		wins++;
 		$(".myScores").text(wins);
